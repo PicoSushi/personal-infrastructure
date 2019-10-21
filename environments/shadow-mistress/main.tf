@@ -39,7 +39,7 @@ resource "aws_lightsail_instance" "main" {
   }
 
   lifecycle {
-    ignore_changes = [tags.CreatedAt]
+    ignore_changes = [tags["CreatedAt"]]
   }
 }
 
