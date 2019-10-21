@@ -43,9 +43,8 @@ resource "aws_lightsail_instance" "main" {
   }
 }
 
-
 resource "aws_lightsail_static_ip" "main" {
-  name = var.instance_name
+  name = "${var.instance_name}-ip"
 }
 
 resource "aws_lightsail_static_ip_attachment" "main" {
