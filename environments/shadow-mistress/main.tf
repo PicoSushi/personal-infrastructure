@@ -32,7 +32,7 @@ resource "aws_lightsail_instance" "main" {
   blueprint_id      = var.blueprint_id
   bundle_id         = var.bundle_id
   key_pair_name     = var.key_pair_name
-  user_data = data.template_file.user_data.rendered
+  user_data         = data.template_file.user_data.rendered
 
   tags = {
     CreatedAt = timestamp()
