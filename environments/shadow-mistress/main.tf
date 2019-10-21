@@ -17,12 +17,22 @@ terraform {
   }
 }
 
+data "template_file" "user_data" {
+  template = file("./templates/user_data.sh")
+
+  vars = {
+    instance_name = var.instance_name
+  }
+}
+
+
 resource "aws_lightsail_instance" "main" {
   name              = var.instance_name
   availability_zone = var.az
   blueprint_id      = var.blueprint_id
   bundle_id         = var.bundle_id
   key_pair_name     = var.key_pair_name
+  user_data = data.template_file.user_data.rendered
 
   tags = {
     CreatedAt = timestamp()
