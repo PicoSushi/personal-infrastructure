@@ -1,4 +1,3 @@
-output "shadow_mistress_public_ip_address" {
-  value = aws_lightsail_instance.main.public_ip_address
+output "shadow_mistress_static_ip_address" {
+  value = aws_lightsail_static_ip.main.ip_address
 }
-

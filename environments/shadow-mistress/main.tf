@@ -25,7 +25,6 @@ data "template_file" "user_data" {
   }
 }
 
-
 resource "aws_lightsail_instance" "main" {
   name              = var.instance_name
   availability_zone = var.az
