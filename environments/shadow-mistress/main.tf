@@ -49,4 +49,9 @@ resource "aws_lightsail_static_ip" "main" {
 resource "aws_lightsail_static_ip_attachment" "main" {
   static_ip_name = aws_lightsail_static_ip.main.name
   instance_name  = aws_lightsail_instance.main.name
+
+  depends_on = [
+    aws_lightsail_instance.main,
+    aws_lightsail_static_ip.main
+  ]
 }
