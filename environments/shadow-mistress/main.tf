@@ -7,7 +7,7 @@ provider "template" {
 
 # Key should be same as this dir name
 terraform {
-  required_version = ">= 0.12.10"
+  required_version = ">= 1.1.9"
 
   backend "s3" {
     bucket = "personal-terraform-states"
